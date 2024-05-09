@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="shortcut icon" href="https://lugom.io/assets/images/favicon.png" type="image/png">
 </head>
+
 <body>
     <div id="app">
         <div class="container">
@@ -33,7 +35,10 @@
                         <input type="search" name="q" placeholder="Do your research..." required>
                         <img src="./assets/img/search-icon.svg" alt="search icon" class="icon">
                     </div>
-                    <button class="submit-btn">Search</button>
+                    <div class="button-wrapper">
+                        <button class="submit-btn">Search</button>
+                        <button class="luck-btn" name="btnI" value="I'm Feeling Lucky">I'm Feeling Lucky</button>
+                    </div>
                 </form>
             </main>
             <footer>
@@ -42,6 +47,7 @@
         </div>
     </div>
 
-    <script id="fixedNavLugomJs" src="https://lugom.io/assets/js/fixedNavLugom.js"></script>
+    <script defer id="fixedNavLugomJs" src="https://lugom.io/assets/js/fixedNavLugom.js"></script>
 </body>
+
 </html>

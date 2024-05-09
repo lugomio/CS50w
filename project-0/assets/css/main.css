@@ -130,7 +130,12 @@ main form .input-wrapper {
     transform: translateY(-50%);
 }
 
-form .submit-btn {
+.button-wrapper{
+    display: flex;
+    gap: 1.6rem;
+}
+
+.button-wrapper button {
     padding: .8rem 1.6rem 1rem 1.6rem;
     background-color: var(--background-gray-500);
     border: none;
@@ -143,6 +148,6 @@ form .submit-btn {
     transition: all .3s;
 }
 
-form .submit-btn:hover {
+.button-wrapper button:hover {
     background-color: var(--background-gray-600);
 }
