@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luugom Search</title>
+    <meta property="og:title" content="Luugomio Search">
+    <meta property="og:description" content="Google search custom frontend.">
+    <meta property="og:image" content="./assets/img/banner.png">
+    <meta name="twitter:title" content="Luugomio Search">
+    <meta name="twitter:description" content="Google search custom frontend.">
+    <meta name="twitter:image" content="./assets/img/banner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="shortcut icon" href="https://lugom.io/assets/images/favicon.png" type="image/png">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="./image.html">Image Search</a></li>
+                        <li><a href="./advanced.html">Advanced Search</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <h1>luugom</h1>
+                <form action="https://www.google.com/search" method="GET">
+                    <div class="input-wrapper">
+                        <input type="search" name="q" placeholder="Do your research..." required>
+                        <img src="./assets/img/search-icon.svg" alt="search icon" class="icon">
+                    </div>
+                    <button class="submit-btn">Search</button>
+                </form>
+            </main>
+            <footer>
+                <span>Made with &hearts; by <a href="https://lugom.io" target="_blank">lugom.io</a></span>
+            </footer>
+        </div>
+    </div>
+
+    <script id="fixedNavLugomJs" src="https://lugom.io/assets/js/fixedNavLugom.js"></script>
+</body>
+</html>
