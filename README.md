@@ -17,7 +17,7 @@ The projects were built using the following technologies:
 ### Steps
 1. Clone this repository to your local machine using the following command:
 ```bash
-git clone https://github.com/your-username/cs50w-projects.git
+git clone https://github.com/lugomio/CS50w.git
 ```
 2. Navigate to the desired project directory.
 3. Open the `index.html` file in your web browser.
