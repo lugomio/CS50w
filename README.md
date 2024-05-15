@@ -28,7 +28,8 @@ Each project within this repository is an independent web application. You can e
 ## Projects
 | ID | Objective | Link |
 | ----------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| Project 0 | Create a frontend interface that interacts with Google to perform searches. | [Access](https://github.com/lugomio/CS50w/tree/master/project-0) |
+| Search | Create a frontend interface that interacts with Google to perform searches. | [Access](https://github.com/lugomio/CS50w/tree/master/project-0) |
+| Wiki | Create a wiki CRUD. | [Access](https://github.com/lugomio/CS50w/tree/master/wiki) |
 
 ## License
 This project is licensed under the [MIT License](LICENSE.md).
