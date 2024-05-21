@@ -43,8 +43,8 @@ class Comment(models.Model):
         return f"Comment {self.id} - {self.comment} (Autor: {self.autor})"
     
 class WatchList(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="watchlists")
-    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="watchlists")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="watchlist_items")
+    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="watchlist_items")
     added_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

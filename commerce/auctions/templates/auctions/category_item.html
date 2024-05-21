@@ -1,9 +1,9 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <h2>Active Listings</h2>
+    <h2>Category: {{ category.name }}</h2>
 
-    {% for listing in active_listings %}
+    {% for listing in listings %}
         <a href="{% url 'listing' listing.id %}" class="text-reset text-decoration-none">
             <div class="card mb-3">
                 <div class="row no-gutters">

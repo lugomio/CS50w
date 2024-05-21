@@ -1,0 +1,103 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Listing: {{ listing.title }}</h2>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+
+        {% if request.user == listing.created_by and listing.active == True %}
+            <form class="my-3" action="{% url 'close' listing.id %}" method="post">
+                {% csrf_token %}
+                <input class="btn btn-danger" type="submit" value="Close Listing">
+            </form>
+        {% endif %}
+
+        {% if listing.active == False and request.user == listing.winner %}
+            <div class="card text-white bg-success my-3" style="max-width: 18rem;">
+                <div class="card-header">You won this listing!</div>
+                <div class="card-body">
+                    <p class="card-text">Please contact the listing creator (<a class="text-white"
+                            href="mailto:{{ listing.created_by.email }}">{{ listing.created_by.email }}</a>)</p>
+                </div>
+            </div>
+        {% endif %}
+
+    {% endif %}
+
+    <img src="{{ listing.banner }}" alt="{{ listing.title }}" class="w-100 ryu-card-image my-4">
+
+    <p>{{ listing.description }}</p>
+
+    <div class="my-4 font-weight-bold h3"><span>Price: ${{ listing.price|floatformat:2 }}</span></div>
+
+    {% if user.is_authenticated %}
+
+        {% if listing.active %}
+            <form action="{% url 'listing' listing.id %}" method="post" class="mb-4">
+                {% csrf_token %}
+                <div class="mb-2">
+                    <span>{{ bids_count }} bid(s) so far.</span>
+                    {% if listing.winner and request.user == listing.winner %}
+                        <span>Your bid is the current bid.</span>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name="price" id="price" min="{{ listing.price }}"
+                        placeholder="Your bid" required>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Place Bid">
+            </form>
+        {% endif %}
+
+        <div class="mb-4">
+            <h3>Watchlist</h3>
+            {% if in_watchlist %}
+                <form method="post" action="{% url 'watchlist' listing.id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="remove">
+                    <input class="btn btn-danger" type="submit" value="Remove from Watchlist">
+                </form>
+            {% else %}
+                <form method="post" action="{% url 'watchlist' listing.id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="add">
+                    <input class="btn btn-primary" type="submit" value="Add to Watchlist">
+                </form>
+            {% endif %}
+        </div>
+
+    {% endif %}
+
+    <div class="mb-4">
+        <h3>Details</h3>
+        <ul>
+            <li>Created by: {{ listing.created_by }} ({{ listing.created_by.email }})</li>
+            <li>Created at: {{ listing.created_at}}</li>
+            <li>Category: <a href="{% url 'category_item' listing.category.id %}">{{ listing.category.name}}</a></li>
+        </ul>
+    </div>
+
+    <h3>Comments</h3>
+    {% if user.is_authenticated %}
+        <form class="mb-4" action="{% url 'comment' listing.id %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <textarea name="comment" id="comment" class="form-control"></textarea>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Comment">
+        </form>
+    {% endif %}
+
+    {% for comment in comments %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <p>{{ comment.comment }}</p>
+                <p class="small mb-0">{{ comment.autor }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
