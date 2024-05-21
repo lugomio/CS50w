@@ -1,0 +1,8 @@
+body {
+    padding: 10px;
+}
+
+.ryu-card-image{
+    height: 400px;
+    object-fit: cover;
+}
