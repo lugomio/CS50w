@@ -30,6 +30,7 @@ Each project within this repository is an independent web application. You can e
 | ----------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | Search | Create a frontend interface that interacts with Google to perform searches. | [Access](https://github.com/lugomio/CS50w/tree/master/search) |
 | Wiki | Create a wiki CRUD. | [Access](https://github.com/lugomio/CS50w/tree/master/wiki) |
+| Commerce | Create a iBay CRUD. | [Access](https://github.com/lugomio/CS50w/tree/master/commerce) |
 
 ## License
 This project is licensed under the [MIT License](LICENSE.md).
